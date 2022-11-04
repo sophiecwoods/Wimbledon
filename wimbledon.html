@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <title>Wimbledon 2013 Tournament Results</title>
+    <head>
+       <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+       <script type="text/javascript" src="wimbledon.js"></script>
+       <style>
+        .centred {
+          text-align: center;
+        }
+
+        .formSpace {
+            margin: 5px;
+        }
+
+        .redText {
+            color: red;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        tbody {
+           border-top: 15px solid white; 
+        }
+        
+        td, th {
+            text-align: left;
+            padding: 5px;
+        }
+        </style>
+    </head>
+
+    <body>
+        <h1 class="centred">Wimbledon 2013 Tournament Results</h1>
+
+        <form class="centred">
+            <fieldset>      
+                <select id="tournament" autocomplete="off">
+                   <option value="na">Select Tournament</option>
+                   <option value="men">Mens tournament</option>
+                   <option value="women">Womens tournament</option>
+                </select><br/><br/>
+
+                <label for="name">Player name</label>
+                <select id="filterName" autocomplete="off">
+                    <option value="na">select</option>
+                    <option value="nameEquals">equals</option>
+                    <option value="nameContains">contains</option>
+                    <option value="none">none</option>
+                </select>
+                <input type="text" id="enterName" class="formSpace" autocomplete="off"><br/>
+
+                <label for="sets">Number of sets</label>
+                <select id="filterSets" autocomplete="off">
+                    <option value="na">select</option>
+                    <option value="setsEquals">equals</option>
+                    <option value="setsGreater">greater than</option>
+                    <option value="setsLess">less than</option>
+                </select>
+                <input type="text" id="enterSets" class="formSpace" autocomplete="off"><br/>
+
+                <label for="round">Round</label>
+                <select id="filterRound" autocomplete="off">
+                    <option value="na">select</option>
+                    <option value="roundEquals">equals</option>
+                    <option value="roundGreater">greater than</option>
+                    <option value="roundLess">less than</option>
+                </select>
+                <input type="text" id="enterRound" class="formSpace" autocomplete="off"><br/> 
+                <input type="button" id="results" class="formSpace" value="View results">        
+            </fieldset>
+         </form>
+         
+         <div id="resultsArea" class="centred">
+             <br/>
+             <p id="errorMessage" class="redText"></p>
+             <table id="resultsTable">
+                <thead id= "resultsTH"></thead>
+             </table>
+         </div>
+         
+    </body>
+</html>
